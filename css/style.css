@@ -1,0 +1,86 @@
+body {
+    background-color: gainsboro;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+p.my-name {
+    font-family: "Roboto";
+    font-weight: 1000;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+p.ask {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+a:link, 
+a:visited, 
+a:hover, 
+a:active { 
+    text-decoration: none; 
+    color: inherit;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: black;
+    }
+
+    p  {
+        color: white;
+    }
+
+    p.ask {
+        visibility: hidden;
+        position: relative;
+    }
+ 
+    p.ask::after  {
+        top: 0;
+        left: 25%;
+        position: absolute;
+        visibility: visible;
+        content: 'Do you like darkness ?';
+        text-align: center;
+    } 
+}
+
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: white;
+    }
+
+    p  {
+        color: black;
+    }
+
+    p.ask {
+        visibility: hidden;      
+        position: relative;
+    }
+ 
+    p.ask::after  {
+        top: 0;
+        left: 25%;
+        position: absolute;
+        visibility: visible;
+        content: 'Do you like lightness ?';
+        text-align: center;
+    } 
+}
+
+
