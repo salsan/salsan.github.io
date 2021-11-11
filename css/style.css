@@ -33,6 +33,20 @@ a:active {
     color: inherit;
 }
 
+@media (prefers-color-scheme: light), (prefers-color-scheme: dark){
+    p.ask {
+        visibility: hidden;
+        position: relative;
+    }
+
+    p.ask::after  {
+        top: 0;
+        left: 25%;
+        position: absolute;
+        visibility: visible;      
+        text-align: center;
+    } 
+}
 
 
 @media (prefers-color-scheme: dark) {
@@ -42,21 +56,11 @@ a:active {
 
     p  {
         color: white;
-    }
-
-    p.ask {
-        visibility: hidden;
-        position: relative;
-    }
+    }   
  
-    p.ask::after  {
-        top: 0;
-        left: 25%;
-        position: absolute;
-        visibility: visible;
+    p.ask::after  {    
         content: 'Do you like darkness ?';
-        text-align: center;
-    } 
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -67,20 +71,7 @@ a:active {
     p  {
         color: black;
     }
-
-    p.ask {
-        visibility: hidden;      
-        position: relative;
-    }
- 
-    p.ask::after  {
-        top: 0;
-        left: 25%;
-        position: absolute;
-        visibility: visible;
+    p.ask::after  {      
         content: 'Do you like lightness ?';
-        text-align: center;
-    } 
+    }
 }
-
-
