@@ -25,6 +25,10 @@ p.ask {
     margin-top: 0;
 }
 
+p.ask:lang(it)::after {
+    content: 'Ti piace il vecchio browser ?';
+}
+
 a:link, 
 a:visited, 
 a:hover, 
@@ -61,6 +65,12 @@ a:active {
     p.ask::after  {    
         content: 'Do you like darkness ?';
     }
+
+    p.ask:lang(it)::after  {    
+        content: "Ti piace l\'oscurità ?";
+    }
+
+    
 }
 
 @media (prefers-color-scheme: light) {
@@ -73,5 +83,8 @@ a:active {
     }
     p.ask::after  {      
         content: 'Do you like lightness ?';
+    }
+    p.ask:lang(it)::after  {      
+        content: 'Ti piace la l\'uminosità ?';
     }
 }
