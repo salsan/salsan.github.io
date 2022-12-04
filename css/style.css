@@ -213,7 +213,7 @@ a:active {
         content: 'Do you like lightness ?';
     }
     p.ask:lang(it)::after  {      
-        content: 'Ti piace la l\'uminosità ?';
+        content: 'Ti piace la luminosità ?';
     }
 }
 
