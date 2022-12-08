@@ -11,7 +11,8 @@ addEventListener('load', function () {
     .catch(console.error)
     .then(function (txt) {
       const styles = document.createElement('style')
-      styles.innerText = `p.ask:lang(${getLanguage()})::after{ content :"${txt[0][0][0].replaceAll('"', '')}";}`
+      const translateTxt = (typeof (txt) === 'undefined') ? currentTxt : txt[0][0][0]
+      styles.innerText = `p.ask:lang(${getLanguage()})::after{ content :"${translateTxt.replaceAll('"', '')}";}`
       document.head.append(styles)
     })
 })
@@ -27,7 +28,9 @@ async function translation (words, lng) {
   }
 
   return (await fetch(url, options)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 200) return response.json()
+    })
     .catch((err) => console.log(err))
   )
 }
