@@ -37,10 +37,5 @@ async function translation (words, lng) {
 
 function getLanguage () {
   const regex = /-\w{2}$/gm
-
-  const str = navigator.language
-
-  const result = str.replace(regex, '')
-
-  return result
+  return navigator.language.replace(regex, '')
 }
